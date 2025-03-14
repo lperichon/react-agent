@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field, fields
 from typing import Annotated, Optional
+import os
 
 from langchain_core.runnables import RunnableConfig, ensure_config
 
@@ -23,7 +24,7 @@ class Configuration:
     )
 
     model: Annotated[str, {"__template_metadata__": {"kind": "llm"}}] = field(
-        default="anthropic/claude-3-5-sonnet-20240620",
+        default=os.getenv("MODEL", "anthropic/claude-3-5-sonnet-20240620"),
         metadata={
             "description": "The name of the language model to use for the agent's main interactions. "
             "Should be in the form: provider/model-name."
