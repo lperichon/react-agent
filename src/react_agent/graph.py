@@ -32,7 +32,7 @@ async def make_graph():
             "args": [
                 "-y",
                 "@modelcontextprotocol/server-filesystem",
-                "/Users/luisperichon/Documents/react-agent"
+                "/Users/luisperichon/Workspace/agents"
             ],
             "transport": "stdio"
         }
